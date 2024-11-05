@@ -1,27 +1,26 @@
-require('dotenv').config();  // Load environment variables from .env file
 
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
+const express = require('express')
+const mongoose = require("mongoose")
+const app = express()
 
-const Task = require('./models/Task.js');
-const taskRoute = require('./routes/task.route');
+const Task = require('./models/Task.js')
+const taskRoute = require('./routes/task.route')
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
-app.use('/tasks', taskRoute);
 
-const PORT = process.env.PORT || 3000;
+app.use('/tasks', taskRoute)
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Hello World Node API is running on port ${PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+
+mongoose.
+connect('mongodb+srv://tranquilinoulysses9:uEE8A6tWejjf3jpt@backenddb.cloxn.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB')
+.then(() => {
+    console.log('Connected to MongoDB')
+    app.listen(3000, () => {
+        console.log('Hello World Node API is running on port 3000')
+    })
+}).catch((error) => {
+    console.log(error)
+})
+

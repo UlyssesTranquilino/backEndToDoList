@@ -1,0 +1,9 @@
+//BACKEND:
+https://www.youtube.com/watch?v=_7UQPve99r4
+
+Task: 
+Todo list API w/ database
+
+Todo List Password: 8POKSzcWw1TezeMT
+
+mongodb+srv://tranquilinoulysses9:<db_password>@todolistapp.leob3.mongodb.net/?retryWrites=true&w=majority&appName=ToDoListApp

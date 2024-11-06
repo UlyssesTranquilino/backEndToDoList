@@ -3,6 +3,9 @@ const express = require('express')
 const mongoose = require("mongoose")
 const app = express()
 
+require('dotenv').config();
+const MONGO_URI = process.env.MONGO_URI;
+
 const Task = require('./models/Task.js')
 const taskRoute = require('./routes/task.route')
 
@@ -14,7 +17,7 @@ app.use('/tasks', taskRoute)
 
 
 mongoose.
-connect('mongodb+srv://tranquilinoulysses9:uEE8A6tWejjf3jpt@backenddb.cloxn.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB')
+connect(MONGO_URI)
 .then(() => {
     console.log('Connected to MongoDB')
     app.listen(3000, () => {
